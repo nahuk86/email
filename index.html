@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Onload Event Email Opener</title>
+</head>
+<body>
+    <h1>Welcome to the Application</h1>
+
+    <script>
+        function openEmailClient() {
+            var email = 'recipient@example.com';
+            var subject = 'Preset subject line';
+            var body = 'Preset email body content';
+            var mailtoLink = 'mailto:' + email + '?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
+            window.location.href = mailtoLink;
+        }
+
+        window.onload = function() {
+            if (confirm('Do you want to open the email client?')) {
+                openEmailClient();
+            }
+        };
+    </script>
+</body>
+</html>
